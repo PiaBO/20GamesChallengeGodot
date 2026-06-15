@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dxl8352wh8kqx"]
+
+[ext_resource type="Script" uid="uid://dickeqbgd7lad" path="res://escenas/button.gd" id="1_5bjgx"]
+
+[node name="game_over" type="Node2D" unique_id=369883985]
+
+[node name="fondo" type="ColorRect" parent="." unique_id=1124671222]
+offset_right = 1153.0
+offset_bottom = 644.0
+color = Color(0.28136903, 0.651718, 0.82334316, 0.69803923)
+
+[node name="CanvasGroup" type="CanvasGroup" parent="." unique_id=999618789]
+
+[node name="Label" type="Label" parent="CanvasGroup" unique_id=214119704]
+offset_left = 198.0
+offset_top = 164.0
+offset_right = 957.565
+offset_bottom = 469.0
+text = "GAME OVER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CanvasGroup" unique_id=1816638698]
+offset_left = 503.0
+offset_top = 348.0
+offset_right = 663.0
+offset_bottom = 391.0
+text = "REINTENTAR"
+script = ExtResource("1_5bjgx")
+
+[connection signal="pressed" from="CanvasGroup/Button" to="CanvasGroup/Button" method="_on_pressed"]

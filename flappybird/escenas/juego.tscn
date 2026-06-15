@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://dpvo8cor4lvyu"]
+
+[ext_resource type="PackedScene" uid="uid://bk373j0tdlo68" path="res://escenas/jugador.tscn" id="1_dayui"]
+[ext_resource type="Script" uid="uid://bxtxdsq7miput" path="res://escenas/juego.gd" id="1_mf1lf"]
+[ext_resource type="PackedScene" uid="uid://blp2j2weuf7fu" path="res://escenas/tubo.tscn" id="2_v0a8y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dayui"]
+size = Vector2(1164, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0a8y"]
+size = Vector2(20, 671)
+
+[node name="juego" type="Node2D" unique_id=836516988]
+script = ExtResource("1_mf1lf")
+
+[node name="fondo" type="ColorRect" parent="." unique_id=435874609]
+offset_right = 1153.0
+offset_bottom = 644.0
+color = Color(0.28136903, 0.651718, 0.82334316, 0.69803923)
+
+[node name="jugador" parent="." unique_id=284948687 instance=ExtResource("1_dayui")]
+position = Vector2(597, 324)
+
+[node name="bordes" type="StaticBody2D" parent="." unique_id=1653301199]
+
+[node name="arriba" type="CollisionShape2D" parent="bordes" unique_id=1348131619]
+position = Vector2(576, -8)
+shape = SubResource("RectangleShape2D_dayui")
+
+[node name="abajo" type="CollisionShape2D" parent="bordes" unique_id=2125302473]
+position = Vector2(578, 654)
+shape = SubResource("RectangleShape2D_dayui")
+
+[node name="izq" type="CollisionShape2D" parent="bordes" unique_id=885538255]
+position = Vector2(-11, 325)
+shape = SubResource("RectangleShape2D_v0a8y")
+
+[node name="der" type="CollisionShape2D" parent="bordes" unique_id=329691615]
+position = Vector2(1163, 319)
+shape = SubResource("RectangleShape2D_v0a8y")
+
+[node name="Contenedor_Tubos" type="Node2D" parent="." unique_id=1642447806]
+
+[node name="tubos4" parent="Contenedor_Tubos" unique_id=535882490 instance=ExtResource("2_v0a8y")]
+position = Vector2(436, -120)
+
+[node name="tubos5" parent="Contenedor_Tubos" unique_id=1687813320 instance=ExtResource("2_v0a8y")]
+position = Vector2(226, -58)
+
+[node name="tubos6" parent="Contenedor_Tubos" unique_id=1960696221 instance=ExtResource("2_v0a8y")]
+position = Vector2(73, -94)
+
+[node name="tubos3" parent="Contenedor_Tubos" unique_id=1699345649 instance=ExtResource("2_v0a8y")]
+position = Vector2(1071, -82)
+
+[node name="tubos2" parent="Contenedor_Tubos" unique_id=1697737152 instance=ExtResource("2_v0a8y")]
+position = Vector2(944, -43)
+
+[node name="tubos" parent="Contenedor_Tubos" unique_id=818177454 instance=ExtResource("2_v0a8y")]
+position = Vector2(802, -55)
+
+[node name="HUD" type="CanvasGroup" parent="." unique_id=1328833412]
+
+[node name="puntos" type="Label" parent="HUD" unique_id=1815089858]
+offset_left = 20.0
+offset_right = 60.0
+offset_bottom = 23.0
+text = "0"
+
+[node name="labelCuenta" type="Label" parent="HUD" unique_id=649170519]
+offset_left = 533.0
+offset_top = 234.0
+offset_right = 692.0
+offset_bottom = 384.0
+text = "3
+"
+horizontal_alignment = 1
+vertical_alignment = 1

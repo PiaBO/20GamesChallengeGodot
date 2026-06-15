@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://blp2j2weuf7fu"]
+
+[ext_resource type="Script" uid="uid://bnu2xfq0ofx2d" path="res://escenas/tubo.gd" id="1_wk4s5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7g6m"]
+size = Vector2(40.5, 524.375)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wk4s5"]
+size = Vector2(47, 86)
+
+[node name="tubos" type="StaticBody2D" unique_id=535882490]
+position = Vector2(0, -1)
+collision_layer = 2
+script = ExtResource("1_wk4s5")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=475593074]
+
+[node name="collisionShapeArriba" type="CollisionShape2D" parent="Area2D" unique_id=1816882473]
+position = Vector2(18.75, 51.625)
+shape = SubResource("RectangleShape2D_q7g6m")
+
+[node name="tuboarriba" type="ColorRect" parent="Area2D" unique_id=725793203]
+offset_left = -1.0
+offset_top = -212.0
+offset_right = 39.0
+offset_bottom = -77.964264
+scale = Vector2(1.0111872, 3.939248)
+color = Color(0.015166652, 0.91, 0, 0.4509804)
+
+[node name="tubobajo" type="ColorRect" parent="Area2D" unique_id=2095709726]
+offset_left = 2.0
+offset_top = 404.0
+offset_right = 42.0
+offset_bottom = 536.5126
+scale = Vector2(1.0111872, 3.939248)
+color = Color(0.015166652, 0.91, 0, 0.4509804)
+
+[node name="collisionShapebajo" type="CollisionShape2D" parent="Area2D" unique_id=602007202]
+position = Vector2(22, 665)
+shape = SubResource("RectangleShape2D_q7g6m")
+
+[node name="ZonaPuntos" type="Area2D" parent="." unique_id=591195035]
+position = Vector2(1, 187)
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaPuntos" unique_id=780029213]
+position = Vector2(19, 173)
+shape = SubResource("RectangleShape2D_wk4s5")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="body_shape_entered" from="Area2D" to="." method="_on_area_2d_body_shape_entered"]
+[connection signal="body_exited" from="ZonaPuntos" to="." method="_on_zona_puntos_body_exited"]
+[connection signal="body_shape_entered" from="ZonaPuntos" to="." method="_on_zona_puntos_body_shape_entered"]

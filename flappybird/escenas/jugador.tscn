@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bk373j0tdlo68"]
+
+[ext_resource type="Script" uid="uid://bjolaj4sibtsw" path="res://escenas/jugador.gd" id="1_tml57"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nly4d"]
+size = Vector2(14, 7)
+
+[node name="jugador" type="CharacterBody2D" unique_id=284948687 groups=["jugador", "jugador1"]]
+position = Vector2(597, 0)
+collision_mask = 15
+script = ExtResource("1_tml57")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1823438706]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -9.0
+offset_top = -5.0
+offset_right = 14.059858
+offset_bottom = 10.379242
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6938464, 0.58520436)
+color = Color(1.7634859, 2.6034334, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1316186623]
+position = Vector2(-1, -0.5)
+shape = SubResource("RectangleShape2D_nly4d")
