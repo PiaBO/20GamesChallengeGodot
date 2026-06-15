@@ -2,38 +2,49 @@ extends Node2D
 
 var puntuacion:= 0
 var yaJugado := false
-@onready var labelStart = $HUD/labelCuenta
+@onready var label_puntos = $HUD/labelCuenta
 
 
 func _ready():
-	cuenta_atras()
-	var tubos = $Contenedor_Tubos.get_children()
-	for tubo in tubos:
-		if tubo.has_signal("signal_puntuar"):
-			tubo.signal_puntuar.connect(_on_tubo_puntuado)
-			tubo.fin_partida.connect(_on_fin_partida)
+	GameManager.estado_cambiado.connect(_on_estado_cambiado)
+	GameManager.puntuacion_actualizada.connect(_on_puntuacion_actualizada)
+	
+	# Estado inicial visual
+	_on_estado_cambiado(GameManager.estado_actual)
+
 
 func _process(delta: float) -> void:
 	if yaJugado:
-		cuenta_atras()
 		$jugador.empezar = false;
 		var tubos = $Contenedor_Tubos.get_children()
 		for tubo in tubos:
 			if tubo.has_signal("signal_puntuar"):
 				tubo.empezar = false
 
-func cuenta_atras():
-	labelStart.visible = true
-	labelStart.text = "3"
-	await get_tree().create_timer(1.0).timeout # Espera 1 segundo
-	labelStart.text = "2"
-	await get_tree().create_timer(1.0).timeout # Espera 1 segundo
-	labelStart.text = "1"
-	await get_tree().create_timer(1.0).timeout # Espera 1 segundo
-	labelStart.text = "YA"
-	await get_tree().create_timer(1.0).timeout # Espera 1 segundo
-	labelStart.visible = false
-	
+func _on_estado_cambiado(nuevo_estado: int):
+	if nuevo_estado == GameManager.Estado.ESPERANDO:
+		label_puntos.visible = false
+		
+	elif nuevo_estado == GameManager.Estado.JUGANDO:
+		label_puntos.visible = true
+		
+	elif nuevo_estado == GameManager.Estado.GAME_OVER:
+		pass
+		#label_game_over.visible = true
+		#label_instruccion.visible = true
+		#label_instruccion.text = "Pulsa ESPACIO para reiniciar"
+
+func _on_puntuacion_actualizada(nueva_puntuacion: int):
+	label_puntos.text = str(nueva_puntuacion)
+
+# Detectamos la tecla para iniciar o reiniciar desde el HUD
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		if GameManager.estado_actual == GameManager.Estado.ESPERANDO:
+			GameManager.iniciar_juego()
+		elif GameManager.estado_actual == GameManager.Estado.GAME_OVER:
+			GameManager.reiniciar_juego()
+
 func _on_tubo_puntuado():
 	puntuacion += 10
 	$HUD/puntos.text = str(puntuacion)
