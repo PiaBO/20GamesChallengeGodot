@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://77mp8r8se3xy"]
+
+[ext_resource type="PackedScene" uid="uid://hiduilpwfid7" path="res://escenas/pala.tscn" id="1_kkt6c"]
+[ext_resource type="Script" uid="uid://p3t3rrms53t8" path="res://escenas/player.gd" id="2_j7xnp"]
+
+[node name="player" unique_id=1414659715 instance=ExtResource("1_kkt6c")]
+
+[node name="CharacterBody2D" parent="." index="0" unique_id=1369260448]
+script = ExtResource("2_j7xnp")

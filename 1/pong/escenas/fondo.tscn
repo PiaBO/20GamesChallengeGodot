@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c0a0s6jhqbfd3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wgmnp"]
+size = Vector2(16, 675)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yypkh"]
+size = Vector2(1162, 20)
+
+[node name="fondo" type="ColorRect" unique_id=660334555]
+offset_right = 1152.0
+offset_bottom = 647.0
+color = Color(0.011764706, 0.011764706, 0.011764706, 1)
+
+[node name="separador" type="ColorRect" parent="." unique_id=254671602]
+layout_mode = 0
+offset_left = 571.0
+offset_right = 581.0
+offset_bottom = 647.0
+
+[node name="perder" type="StaticBody2D" parent="." unique_id=1892238283]
+collision_mask = 4
+
+[node name="izq" type="CollisionShape2D" parent="perder" unique_id=559167568]
+position = Vector2(-6, 328)
+shape = SubResource("RectangleShape2D_wgmnp")
+
+[node name="der" type="CollisionShape2D" parent="perder" unique_id=969220439]
+position = Vector2(1161, 326)
+shape = SubResource("RectangleShape2D_wgmnp")
+
+[node name="limites" type="StaticBody2D" parent="." unique_id=772428200]
+collision_mask = 4
+
+[node name="arriba" type="CollisionShape2D" parent="limites" unique_id=491571097]
+position = Vector2(577, -9)
+shape = SubResource("RectangleShape2D_yypkh")
+
+[node name="suelo" type="CollisionShape2D" parent="limites" unique_id=863818954]
+position = Vector2(573, 656)
+shape = SubResource("RectangleShape2D_yypkh")

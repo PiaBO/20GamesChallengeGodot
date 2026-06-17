@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bpekx5e0fp132"]
+
+[ext_resource type="Script" uid="uid://dv8u6dv6stb2e" path="res://escenas/pelota.gd" id="1_se23l"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_se23l"]
+friction = 0.0
+bounce = 1.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dwt4d"]
+size = Vector2(9, 8)
+
+[node name="pelota" type="RigidBody2D" unique_id=338546871]
+collision_layer = 4
+collision_mask = 11
+physics_material_override = SubResource("PhysicsMaterial_se23l")
+gravity_scale = 0.0
+script = ExtResource("1_se23l")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1721474604]
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=798341245]
+position = Vector2(5.5, 5)
+shape = SubResource("RectangleShape2D_dwt4d")

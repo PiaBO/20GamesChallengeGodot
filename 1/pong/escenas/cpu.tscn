@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://btp1wo0260h31"]
+
+[ext_resource type="PackedScene" uid="uid://hiduilpwfid7" path="res://escenas/pala.tscn" id="1_e6psm"]
+[ext_resource type="Script" uid="uid://c7ajcihv402e0" path="res://escenas/cpu.gd" id="2_p6a47"]
+
+[node name="cpu" unique_id=1414659715 instance=ExtResource("1_e6psm")]
+
+[node name="CharacterBody2D" parent="." index="0" unique_id=1369260448]
+script = ExtResource("2_p6a47")

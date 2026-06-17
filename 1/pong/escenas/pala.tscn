@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://hiduilpwfid7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0lejq"]
+size = Vector2(23, 114)
+
+[node name="pala" type="Node2D" unique_id=1414659715]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1369260448]
+collision_layer = 8
+collision_mask = 4
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody2D" unique_id=1231193852]
+offset_right = 21.0
+offset_bottom = 115.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=791072464]
+position = Vector2(10.5, 56)
+shape = SubResource("RectangleShape2D_0lejq")
