@@ -1,17 +1,17 @@
-extends CharacterBody2D 
-var velocidad_movimiento = 400 # Ajusta este valor a lo que necesites (tu "5" escalado)
+extends StaticBody2D
+
+var movimiento = 0
+var velocidad = 200
 
 func _ready() -> void:
 	position.x = 212
 	position.y = 300
-
-func _physics_process(delta: float) -> void: # 2. Cambiado a physics_process
-	velocity = Vector2.ZERO
 	
+func _physics_process(delta: float) -> void:
+	movimiento = 0
 	if Input.is_action_pressed("arriba"):
-		velocity.y = -velocidad_movimiento
+		movimiento = -velocidad * delta
 	elif Input.is_action_pressed("abajo"):
-		velocity.y = velocidad_movimiento
+		movimiento = velocidad * delta
 		
-	move_and_slide()
-	position.y = clamp(position.y, 0, 533)
+	position.y = clamp(position.y + movimiento, 0, 533)

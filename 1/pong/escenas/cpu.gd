@@ -1,23 +1,21 @@
-extends CharacterBody2D 
+extends StaticBody2D 
 
-var velocidad_movimiento = 400 
+var velocidad_movimiento = 20 
 var sube := true
 func _ready() -> void:
-	position.x = 1152/2
+	position.x = 1152 - 212
 	position.y = 648/2
 
 func _physics_process(delta: float) -> void: 
-	velocity = Vector2.ZERO
-
+	var movimiento
 	if sube:
-		velocity.y = -velocidad_movimiento
+		movimiento = -velocidad_movimiento
 	else:
-		velocity.y = velocidad_movimiento
+		movimiento = velocidad_movimiento
 		
-	move_and_slide()
-	if position.y < 0:
+	if (position.y+movimiento) < 0:
 		sube = false
-	if position.y > 533:
+	if (position.y+movimiento) > 533:
 		sube = true
-		
-	position.y = clamp(position.y, 0, 533)
+
+	position.y = clamp(position.y + movimiento, 0, 533)

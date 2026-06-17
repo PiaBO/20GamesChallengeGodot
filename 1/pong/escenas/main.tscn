@@ -1,13 +1,11 @@
 [gd_scene format=3 uid="uid://blml583vs0opb"]
 
 [ext_resource type="PackedScene" uid="uid://c0a0s6jhqbfd3" path="res://escenas/fondo.tscn" id="1_d7u15"]
-[ext_resource type="Script" uid="uid://c7ajcihv402e0" path="res://escenas/cpu.gd" id="1_dkga6"]
 [ext_resource type="PackedScene" uid="uid://bpekx5e0fp132" path="res://escenas/pelota.tscn" id="2_26pgj"]
 [ext_resource type="PackedScene" uid="uid://77mp8r8se3xy" path="res://escenas/player.tscn" id="3_26pgj"]
 [ext_resource type="PackedScene" uid="uid://btp1wo0260h31" path="res://escenas/cpu.tscn" id="5_dkga6"]
 
 [node name="main" type="Node2D" unique_id=453401446]
-script = ExtResource("1_dkga6")
 metadata/_edit_horizontal_guides_ = [686.0]
 
 [node name="fondo" parent="." unique_id=660334555 instance=ExtResource("1_d7u15")]

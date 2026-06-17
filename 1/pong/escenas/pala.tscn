@@ -5,7 +5,7 @@ size = Vector2(23, 114)
 
 [node name="pala" type="Node2D" unique_id=1414659715]
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1369260448]
+[node name="CharacterBody2D" type="StaticBody2D" parent="." unique_id=899613395]
 collision_layer = 8
 collision_mask = 4
 
