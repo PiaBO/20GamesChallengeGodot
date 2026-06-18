@@ -1,7 +1,13 @@
 [gd_scene format=3 uid="uid://cmpq16a22gemx"]
 
+[ext_resource type="PackedScene" uid="uid://ck250ni3mnrgj" path="res://escenas/pelota.tscn" id="1_0kxa1"]
 [ext_resource type="PackedScene" uid="uid://yge7md4sqpox" path="res://escenas/jugador.tscn" id="1_d7u15"]
+[ext_resource type="PackedScene" uid="uid://p2pjnyvjh3f4" path="res://escenas/limites.tscn" id="3_jumxm"]
 
 [node name="main" type="Node2D" unique_id=1022437196]
 
+[node name="pelota" parent="." unique_id=1463640992 instance=ExtResource("1_0kxa1")]
+
 [node name="jugador" parent="." unique_id=962666688 instance=ExtResource("1_d7u15")]
+
+[node name="limites" parent="." unique_id=2012444916 instance=ExtResource("3_jumxm")]

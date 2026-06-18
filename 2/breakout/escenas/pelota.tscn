@@ -11,7 +11,9 @@ radius = 8.0
 
 [node name="pelota" type="RigidBody2D" unique_id=1463640992]
 collision_mask = 158
+mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_se23l")
+gravity_scale = 0.0
 script = ExtResource("1_se23l")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=855247477]

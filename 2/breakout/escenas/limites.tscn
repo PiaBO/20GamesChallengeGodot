@@ -1,17 +1,34 @@
 [gd_scene format=3 uid="uid://p2pjnyvjh3f4"]
 
-[ext_resource type="PackedScene" uid="uid://ck250ni3mnrgj" path="res://escenas/pelota.tscn" id="1_wud7h"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qawi3"]
 size = Vector2(1168, 20)
 
-[node name="limites" type="Node2D" unique_id=2012444916]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wud7h"]
+size = Vector2(1168, 20)
 
-[node name="pelota" parent="." unique_id=1463640992 instance=ExtResource("1_wud7h")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sad0q"]
+size = Vector2(11, 692)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_11r56"]
+size = Vector2(23, 680)
+
+[node name="limites" type="Node2D" unique_id=2012444916]
 
 [node name="paredes" type="StaticBody2D" parent="." unique_id=1821681775]
 collision_layer = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes" unique_id=2106929553]
-position = Vector2(575, 649)
+[node name="suelo" type="CollisionShape2D" parent="paredes" unique_id=2106929553]
+position = Vector2(578, 664)
 shape = SubResource("RectangleShape2D_qawi3")
+
+[node name="techo" type="CollisionShape2D" parent="paredes" unique_id=1156952599]
+position = Vector2(572, -8)
+shape = SubResource("RectangleShape2D_wud7h")
+
+[node name="izq" type="CollisionShape2D" parent="paredes" unique_id=20700008]
+position = Vector2(-4.5, 336)
+shape = SubResource("RectangleShape2D_sad0q")
+
+[node name="der" type="CollisionShape2D" parent="paredes" unique_id=1548017528]
+position = Vector2(1165.5, 330)
+shape = SubResource("RectangleShape2D_11r56")
