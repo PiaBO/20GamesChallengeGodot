@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://p2pjnyvjh3f4"]
+
+[ext_resource type="PackedScene" uid="uid://ck250ni3mnrgj" path="res://escenas/pelota.tscn" id="1_wud7h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qawi3"]
+size = Vector2(1168, 20)
+
+[node name="limites" type="Node2D" unique_id=2012444916]
+
+[node name="pelota" parent="." unique_id=1463640992 instance=ExtResource("1_wud7h")]
+
+[node name="paredes" type="StaticBody2D" parent="." unique_id=1821681775]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="paredes" unique_id=2106929553]
+position = Vector2(575, 649)
+shape = SubResource("RectangleShape2D_qawi3")
