@@ -1,37 +1,54 @@
-extends RigidBody2D
+extends CharacterBody2D
 
-var acelearcion := 200.0
-var direccion : Vector2
+var velocidad_base := 400.0
+var velocidad_actual := velocidad_base
+var factor_aceleracion := 1.03 
+var velocidad_maxima := 1200.0 
 
 func _ready() -> void:
-	position.x = GameManager.ANCHO_PANTALLA / 2
-	position.y = 20
-	
-	direccion = Vector2(0,1)
+	resetPelota()
 
 func _physics_process(delta: float) -> void:
-	var collision = move_and_collide(direccion * acelearcion * delta)
-	var collider
+	var collision = move_and_collide(velocity * delta)
 	
-	if collision:
-		acelearcion += 0.050
-		collider = collision.get_collider()
-		#direccion = direccion_rebote(collider)
-		direccion *= Vector2(-1,1) 
-	move_and_collide(direccion * acelearcion * delta)	
+	# o el alto de tu pantalla
+	if position.y > GameManager.ALTO_PANTALLA: 
+		GameManager.perder_vida()
+		resetPelota()
+	elif collision:
+		var collider = collision.get_collider()
 		
+		velocidad_actual = min(velocidad_actual * factor_aceleracion, velocidad_maxima)
+		
+		# Detectar si es un bloque
+		if collider.has_method("recibir_golpe"):
+			collider.recibir_golpe()			
+		if collider.is_in_group("jugador"): 
+			_rebote_paleta(collider)
+		else:
+			
+			velocity = velocity.bounce(collision.get_normal()) 
+			
+			velocity = velocity.normalized() * velocidad_actual
+
+func resetPelota():
+	print("reset")
+	position.x = GameManager.ANCHO_PANTALLA / 2
+	position.y = 200 
 	
-func direccion_rebote(collider):
-	var pelotaX = position.x
-	var jugadorX = collider.position.x
-	var dist = pelotaX - jugadorX
-	var new_dir = Vector2()
+	var direccion_inicial = Vector2(1, 1).normalized()
+	velocity = direccion_inicial * velocidad_actual
+
+func _rebote_paleta(paleta):
 	
-	if direccion.x > 0:
-		new_dir.x= -1
-	else:
-		new_dir.x = 1
-		
-	new_dir *= direccion
-		
-	return new_dir.normalized()
+	var ancho_paleta = paleta.ancho 
+	var distancia_relativa = (position.x - paleta.position.x) / (ancho_paleta / 2.0)
+	
+	distancia_relativa = clamp(distancia_relativa, -0.95, 0.95)
+	
+	var angulo_maximo = PI / 2.5 
+	var angulo_rebote = distancia_relativa * angulo_maximo
+	
+	var nueva_direccion = Vector2(sin(angulo_rebote), -cos(angulo_rebote))
+	
+	velocity = nueva_direccion.normalized() * velocidad_actual

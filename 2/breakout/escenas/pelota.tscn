@@ -2,18 +2,11 @@
 
 [ext_resource type="Script" uid="uid://dlsqdof248m48" path="res://escenas/pelota.gd" id="1_se23l"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_se23l"]
-friction = 0.0
-bounce = 1.0
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_dwt4d"]
 radius = 8.0
 
-[node name="pelota" type="RigidBody2D" unique_id=1463640992]
+[node name="pelota" type="CharacterBody2D" unique_id=34127554]
 collision_mask = 158
-mass = 0.5
-physics_material_override = SubResource("PhysicsMaterial_se23l")
-gravity_scale = 0.0
 script = ExtResource("1_se23l")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=855247477]

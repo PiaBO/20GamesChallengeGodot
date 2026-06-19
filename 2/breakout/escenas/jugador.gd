@@ -1,10 +1,12 @@
 extends StaticBody2D
 
-var velocidad = 200
+var velocidad = 1000
+var ancho
 
 func _ready() -> void:
 	position.x = GameManager.ALTO_PANTALLA - 20
 	position.y = GameManager.ANCHO_PANTALLA  /2
+	ancho = 140
 
 func _process(delta: float) -> void:
 	var movimiento = 0

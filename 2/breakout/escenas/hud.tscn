@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://jnvs17wesm8r"]
+
+[ext_resource type="Script" uid="uid://b4vvly60fwvtp" path="res://escenas/hud.gd" id="1_m5lxu"]
+
+[node name="HUD" type="CanvasGroup" unique_id=412612366]
+script = ExtResource("1_m5lxu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=268866330]
+offset_left = 1045.0
+offset_top = 18.0
+offset_right = 1145.0
+offset_bottom = 40.0
+color = Color(0.94509804, 0.09411765, 0.2627451, 1)
+
+[node name="LabelPuntos" type="Label" parent="." unique_id=2064143438]
+offset_left = 7.0
+offset_top = 17.0
+offset_right = 173.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 25
+text = "Puntuación: 0"
+
+[node name="LabelVida" type="Label" parent="." unique_id=1754840550]
+offset_left = 1046.0
+offset_top = 11.0
+offset_right = 1145.0
+offset_bottom = 46.0
+theme_override_font_sizes/font_size = 25
+text = "<3 <3 <3"

@@ -3,19 +3,19 @@
 [ext_resource type="Script" uid="uid://7gmu1fyu8bcp" path="res://escenas/jugador.gd" id="1_tml57"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nly4d"]
-size = Vector2(138, 20)
+size = Vector2(299, 20)
 
-[node name="jugador" type="StaticBody2D" unique_id=962666688]
+[node name="jugador" type="StaticBody2D" unique_id=962666688 groups=["jugador"]]
 collision_layer = 4
 script = ExtResource("1_tml57")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2108723592]
-offset_left = -70.0
-offset_top = -10.0
-offset_right = 70.0
-offset_bottom = 10.0
-color = Color(0.59607846, 1, 0, 1)
+offset_left = -150.0
+offset_top = -12.0
+offset_right = 150.0
+offset_bottom = 8.0
+color = Color(0.0019607844, 0.5370987, 0.12993114, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1986813809]
-position = Vector2(0, 1)
+position = Vector2(0.5, -2)
 shape = SubResource("RectangleShape2D_nly4d")

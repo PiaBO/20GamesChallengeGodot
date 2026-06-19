@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://p2pjnyvjh3f4"]
 
+[ext_resource type="Texture2D" uid="uid://ddgl6s5gejn8i" path="res://img/wp14118497-ascii-art-wallpapers.jpg" id="1_wud7h"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qawi3"]
 size = Vector2(1168, 20)
 
@@ -18,7 +20,7 @@ size = Vector2(23, 680)
 collision_layer = 8
 
 [node name="suelo" type="CollisionShape2D" parent="paredes" unique_id=2106929553]
-position = Vector2(578, 664)
+position = Vector2(585, 687)
 shape = SubResource("RectangleShape2D_qawi3")
 
 [node name="techo" type="CollisionShape2D" parent="paredes" unique_id=1156952599]
@@ -32,3 +34,8 @@ shape = SubResource("RectangleShape2D_sad0q")
 [node name="der" type="CollisionShape2D" parent="paredes" unique_id=1548017528]
 position = Vector2(1165.5, 330)
 shape = SubResource("RectangleShape2D_11r56")
+
+[node name="fondo" type="Sprite2D" parent="." unique_id=1810216159]
+position = Vector2(580.00006, 324.99997)
+scale = Vector2(0.40208334, 0.35999998)
+texture = ExtResource("1_wud7h")

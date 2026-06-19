@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bon4jb3xppri4"]
+
+[ext_resource type="Script" uid="uid://dcmilnswfubt1" path="res://escenas/bloques.gd" id="1_b2150"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5sf46"]
+size = Vector2(200, 50)
+
+[node name="bloques" type="StaticBody2D" unique_id=1755811981]
+collision_layer = 2
+script = ExtResource("1_b2150")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1303018366]
+offset_right = 200.0
+offset_bottom = 50.0
+color = Color(0, 1, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2137252458]
+position = Vector2(100, 25)
+shape = SubResource("RectangleShape2D_5sf46")
