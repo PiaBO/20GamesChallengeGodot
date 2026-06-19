@@ -12,7 +12,7 @@ size = Vector2(1168, 20)
 size = Vector2(11, 692)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_11r56"]
-size = Vector2(23, 680)
+size = Vector2(25.5, 680)
 
 [node name="limites" type="Node2D" unique_id=2012444916]
 
@@ -32,10 +32,10 @@ position = Vector2(-4.5, 336)
 shape = SubResource("RectangleShape2D_sad0q")
 
 [node name="der" type="CollisionShape2D" parent="paredes" unique_id=1548017528]
-position = Vector2(1165.5, 330)
+position = Vector2(1167.75, 322)
 shape = SubResource("RectangleShape2D_11r56")
 
 [node name="fondo" type="Sprite2D" parent="." unique_id=1810216159]
-position = Vector2(580.00006, 324.99997)
-scale = Vector2(0.40208334, 0.35999998)
+position = Vector2(577.50006, 324.99997)
+scale = Vector2(0.40034723, 0.35999998)
 texture = ExtResource("1_wud7h")

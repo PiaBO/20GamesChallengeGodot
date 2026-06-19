@@ -3,15 +3,15 @@
 [ext_resource type="Script" uid="uid://dlsqdof248m48" path="res://escenas/pelota.gd" id="1_se23l"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dwt4d"]
-radius = 8.0
+radius = 7.071068
 
 [node name="pelota" type="CharacterBody2D" unique_id=34127554]
 collision_mask = 158
 script = ExtResource("1_se23l")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=855247477]
-offset_right = 15.0
-offset_bottom = 15.0
+offset_right = 14.0
+offset_bottom = 14.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=833529013]
 position = Vector2(7, 7)

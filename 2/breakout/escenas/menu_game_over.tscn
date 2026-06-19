@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://bq6kl6yi1lfir"]
+
+[ext_resource type="Script" uid="uid://djo7vao8ufr6l" path="res://escenas/menu_game_over.gd" id="1_f2oj5"]
+
+[node name="menu_game_over" type="Node2D" unique_id=20035822]
+script = ExtResource("1_f2oj5")
+
+[node name="labelFin" type="Label" parent="." unique_id=682834003]
+offset_left = 306.0
+offset_top = 146.0
+offset_right = 850.0
+offset_bottom = 240.0
+theme_override_font_sizes/font_size = 60
+text = "FIN DE LA PARTIDA"
+
+[node name="Label" type="Label" parent="." unique_id=1832527540]
+offset_left = 324.0
+offset_top = 276.0
+offset_right = 619.0
+offset_bottom = 316.0
+theme_override_font_sizes/font_size = 29
+text = "Puntos conseguidos: "
+
+[node name="Button" type="Button" parent="." unique_id=868294266]
+offset_left = 453.0
+offset_top = 414.0
+offset_right = 667.0
+offset_bottom = 481.0
+text = "NUEVA PARTIDA"

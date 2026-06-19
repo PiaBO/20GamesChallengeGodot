@@ -1,19 +1,39 @@
 extends Node2D
 
+signal puntos_cambiaron(nuevo_total)
+signal vidas_cambiaron(nuevo_total)
+signal game_over
+signal juego_pausado(esta_pausado)
+signal nueva_partida
+
+
 var ANCHO_PANTALLA : int
 var ALTO_PANTALLA : int
 var puntos := 0
 var vidas
-
-
-signal puntos_cambiaron(nuevo_total)
-signal vidas_cambiaron(nuevo_total)
-signal game_over
+var esta_pausado := false
 
 func _ready() -> void:
 	ANCHO_PANTALLA = get_viewport_rect().size.x
 	ALTO_PANTALLA = get_viewport_rect().size.y
 	vidas = 3
+	
+func pausar_juego() -> void:
+	esta_pausado = true
+	get_tree().paused = true
+	juego_pausado.emit(true)	
+
+func reanudar_juego() -> void:
+	esta_pausado = false
+	get_tree().paused = false
+	juego_pausado.emit(false)
+	nueva_partida.emit()
+
+func toggle_pausa() -> void:
+	if esta_pausado:
+		reanudar_juego()
+	else:
+		pausar_juego()
 
 func sumar_puntos(cantidad: int) -> void:
 	puntos += cantidad
@@ -23,6 +43,7 @@ func perder_vida() -> void:
 	vidas -= 1
 	vidas_cambiaron.emit(vidas)
 	if vidas <= 0:
+		vidas = 3
 		game_over.emit()
 
 func reiniciar_partida() -> void:

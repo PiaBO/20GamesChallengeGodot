@@ -11,7 +11,6 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
 	
-	# o el alto de tu pantalla
 	if position.y > GameManager.ALTO_PANTALLA: 
 		GameManager.perder_vida()
 		resetPelota()
@@ -20,22 +19,21 @@ func _physics_process(delta: float) -> void:
 		
 		velocidad_actual = min(velocidad_actual * factor_aceleracion, velocidad_maxima)
 		
-		# Detectar si es un bloque
 		if collider.has_method("recibir_golpe"):
 			collider.recibir_golpe()			
 		if collider.is_in_group("jugador"): 
 			_rebote_paleta(collider)
 		else:
-			
 			velocity = velocity.bounce(collision.get_normal()) 
-			
 			velocity = velocity.normalized() * velocidad_actual
 
 func resetPelota():
-	print("reset")
+	velocity = Vector2(0,0)
 	position.x = GameManager.ANCHO_PANTALLA / 2
-	position.y = 200 
-	
+	position.y = 400 
+	await get_tree().create_timer(2.0).timeout
+
+
 	var direccion_inicial = Vector2(1, 1).normalized()
 	velocity = direccion_inicial * velocidad_actual
 
@@ -48,7 +46,6 @@ func _rebote_paleta(paleta):
 	
 	var angulo_maximo = PI / 2.5 
 	var angulo_rebote = distancia_relativa * angulo_maximo
-	
 	var nueva_direccion = Vector2(sin(angulo_rebote), -cos(angulo_rebote))
 	
 	velocity = nueva_direccion.normalized() * velocidad_actual

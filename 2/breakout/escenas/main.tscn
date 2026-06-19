@@ -2,11 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://ck250ni3mnrgj" path="res://escenas/pelota.tscn" id="1_0kxa1"]
 [ext_resource type="PackedScene" uid="uid://jnvs17wesm8r" path="res://escenas/hud.tscn" id="1_26pgj"]
+[ext_resource type="Script" uid="uid://btxmoaqjft4ro" path="res://escenas/main.gd" id="1_a8p2b"]
 [ext_resource type="PackedScene" uid="uid://yge7md4sqpox" path="res://escenas/jugador.tscn" id="1_d7u15"]
+[ext_resource type="PackedScene" uid="uid://dd3k3bonmwsto" path="res://escenas/menu_pausa.tscn" id="2_a8p2b"]
+[ext_resource type="PackedScene" uid="uid://bq6kl6yi1lfir" path="res://escenas/menu_game_over.tscn" id="2_o8odp"]
 [ext_resource type="PackedScene" uid="uid://p2pjnyvjh3f4" path="res://escenas/limites.tscn" id="3_jumxm"]
-[ext_resource type="PackedScene" uid="uid://bon4jb3xppri4" path="res://escenas/bloques.tscn" id="5_dkga6"]
 
 [node name="main" type="Node2D" unique_id=1022437196]
+script = ExtResource("1_a8p2b")
+
+[node name="Menu Pausa" parent="." unique_id=49091919 instance=ExtResource("2_a8p2b")]
 
 [node name="limites" parent="." unique_id=2012444916 instance=ExtResource("3_jumxm")]
 
@@ -16,11 +21,4 @@
 
 [node name="HUD" parent="." unique_id=412612366 instance=ExtResource("1_26pgj")]
 
-[node name="bloques" parent="." unique_id=1755811981 instance=ExtResource("5_dkga6")]
-position = Vector2(822, 157)
-
-[node name="bloques2" parent="." unique_id=1725298483 instance=ExtResource("5_dkga6")]
-position = Vector2(611, 156)
-
-[node name="bloques3" parent="." unique_id=1392244336 instance=ExtResource("5_dkga6")]
-position = Vector2(397, 156)
+[node name="menu_game_over" parent="." unique_id=20035822 instance=ExtResource("2_o8odp")]
