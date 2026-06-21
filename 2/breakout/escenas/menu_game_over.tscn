@@ -6,24 +6,52 @@
 script = ExtResource("1_f2oj5")
 
 [node name="labelFin" type="Label" parent="." unique_id=682834003]
-offset_left = 306.0
-offset_top = 146.0
-offset_right = 850.0
-offset_bottom = 240.0
-theme_override_font_sizes/font_size = 60
+offset_left = 98.0
+offset_top = 39.0
+offset_right = 1042.0
+offset_bottom = 182.0
+theme_override_font_sizes/font_size = 104
 text = "FIN DE LA PARTIDA"
 
 [node name="Label" type="Label" parent="." unique_id=1832527540]
-offset_left = 324.0
-offset_top = 276.0
-offset_right = 619.0
-offset_bottom = 316.0
+offset_left = 282.0
+offset_top = 251.0
+offset_right = 577.0
+offset_bottom = 291.0
 theme_override_font_sizes/font_size = 29
 text = "Puntos conseguidos: "
 
+[node name="LabelRanking" type="Label" parent="." unique_id=1098490456]
+offset_left = 287.0
+offset_top = 310.0
+offset_right = 458.0
+offset_bottom = 333.0
+text = "RANKING DE PUNTOS:"
+
+[node name="Puesto1" type="Label" parent="." unique_id=713567873]
+offset_left = 481.0
+offset_top = 314.0
+offset_right = 521.0
+offset_bottom = 337.0
+text = "0"
+
+[node name="Puesto2" type="Label" parent="." unique_id=1504626785]
+offset_left = 481.0
+offset_top = 344.0
+offset_right = 521.0
+offset_bottom = 367.0
+text = "0"
+
+[node name="Puesto3" type="Label" parent="." unique_id=1061817267]
+offset_left = 481.0
+offset_top = 376.0
+offset_right = 521.0
+offset_bottom = 399.0
+text = "0"
+
 [node name="Button" type="Button" parent="." unique_id=868294266]
-offset_left = 453.0
-offset_top = 414.0
-offset_right = 667.0
-offset_bottom = 481.0
+offset_left = 460.0
+offset_top = 523.0
+offset_right = 674.0
+offset_bottom = 590.0
 text = "NUEVA PARTIDA"
