@@ -11,6 +11,7 @@ extends Node2D
 
 func _ready() -> void:
 	GameManager.nueva_partida.connect(_on_nueva_partida)
+	GameManager.game_over.connect(_on_game_over)
 
 	generarNivel()
 
@@ -32,6 +33,10 @@ func generarNivel():
 	
 func _on_nueva_partida():
 	generarNivel()
-	
+
+func _on_game_over():
+	for child in get_children():
+		if child is StaticBody2D:
+			child.queue_free()
 
 	
