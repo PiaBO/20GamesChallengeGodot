@@ -66,6 +66,7 @@ func delete_save() -> void:
 # SISTEMA DE OPCIONES
 # ==========================================
 func apply_resolution(resolution: Vector2i) -> void:
+	print("resolucion cambiada")
 	DisplayServer.window_set_size(resolution)
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	_save_setting("video", "resolution", "%dx%d" % [resolution.x, resolution.y])

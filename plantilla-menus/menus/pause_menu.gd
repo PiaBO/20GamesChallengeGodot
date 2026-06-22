@@ -12,6 +12,7 @@ var resolutions := [
 
 func _ready() -> void:
 	# Llenar dropdown de resoluciones
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	for res in resolutions:
 		res_dropdown.add_item("%dx%d" % [res.x, res.y])
 	
@@ -40,8 +41,8 @@ func _close_menu() -> void:
 func _on_btn_reanudar_pressed() -> void:
 	_close_menu()
 
-func _on_res_dropdown_item_selected(index: int) -> void:
-	GameManager.apply_resolution(resolutions[index])
+#func _on_res_dropdown_item_selected(index: int) -> void:
+#	GameManager.apply_resolution(resolutions[index])
 
 func _on_vol_slider_value_changed(value: float) -> void:
 	GameManager.apply_volume("Master", value)
@@ -52,3 +53,13 @@ func _on_btn_menu_principal_pressed() -> void:
 	
 func _on_game_paused(is_paused: bool) -> void:
 	visible = is_paused
+
+func _on_vol_slider_drag_started() -> void:
+	pass # Replace with function body.
+
+func _on_btn_menu_prinipal_pressed() -> void:
+	pass # Replace with function body.
+
+
+func _on_option_button_item_selected(index: int) -> void:
+	GameManager.apply_resolution(resolutions[index])
