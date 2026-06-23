@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://64wo8xuqetwm"]
 
 [node name="GameOverMenu" type="Control" unique_id=1174913777]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 

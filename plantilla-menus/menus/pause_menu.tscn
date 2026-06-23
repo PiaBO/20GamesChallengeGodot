@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dykquox233wlv" path="res://menus/pause_menu.gd" id="1_s0u37"]
 
 [node name="PauseMenu" type="Control" unique_id=1793250673]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_s0u37")
