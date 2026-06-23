@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://7b10x8cc4iea"]
+
+[ext_resource type="Script" uid="uid://dykquox233wlv" path="res://menus/pause_menu.gd" id="1_s0u37"]
+
+[node name="PauseMenu" type="Control" unique_id=1793250673]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_s0u37")
+
+[node name="BtnReanudar" type="Button" parent="." unique_id=1425193951]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 464.0
+offset_right = 722.0
+offset_bottom = 564.0
+theme_override_font_sizes/font_size = 35
+text = "REANUDAR
+"
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=929618910]
+layout_mode = 0
+offset_left = 294.0
+offset_top = 138.0
+offset_right = 836.0
+offset_bottom = 291.0
+
+[node name="VolSlider" type="HSlider" parent="." unique_id=839495755]
+layout_mode = 0
+offset_left = 342.0
+offset_top = 318.0
+offset_right = 798.0
+offset_bottom = 359.0
+
+[node name="BtnMenuPrinipal" type="Button" parent="." unique_id=250457912]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 380.0
+offset_right = 665.0
+offset_bottom = 451.0
+text = "MENU PRINCIPAL
+"
+
+[connection signal="pressed" from="BtnReanudar" to="." method="_on_btn_reanudar_pressed"]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="drag_started" from="VolSlider" to="." method="_on_vol_slider_drag_started"]
+[connection signal="pressed" from="BtnMenuPrinipal" to="." method="_on_btn_menu_prinipal_pressed"]

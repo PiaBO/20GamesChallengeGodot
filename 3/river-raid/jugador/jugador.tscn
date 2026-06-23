@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://58l173mrqoqc"]
+
+[ext_resource type="Script" uid="uid://csaw0jpy8dhj2" path="res://jugador/jugador.gd" id="1_y3xgi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vouv"]
+size = Vector2(28, 55)
+
+[node name="jugador" type="CharacterBody2D" unique_id=888636717]
+script = ExtResource("1_y3xgi")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1441339386]
+offset_right = 28.0
+offset_bottom = 54.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2126247970]
+position = Vector2(14, 28)
+shape = SubResource("RectangleShape2D_5vouv")
+
+[node name="PuntoDisparo" type="Marker2D" parent="." unique_id=1885224695 groups=["Balas"]]
+position = Vector2(15, 0)

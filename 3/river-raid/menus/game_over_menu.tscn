@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://64wo8xuqetwm"]
+
+[node name="GameOverMenu" type="Control" unique_id=1174913777]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1397566872]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LableGameOver" type="Label" parent="VBoxContainer" unique_id=1431779516]
+layout_mode = 2
+text = "FIN DE LA PARTIDA"
+
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1341806031]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1151182713]
+layout_mode = 2

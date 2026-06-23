@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://l1qa6514x40q"]
+
+[ext_resource type="Script" uid="uid://cgmjn6oaffg5a" path="res://menus/game.gd" id="1_04dmk"]
+[ext_resource type="PackedScene" uid="uid://7b10x8cc4iea" path="res://menus/pause_menu.tscn" id="2_gkr7p"]
+[ext_resource type="PackedScene" uid="uid://58l173mrqoqc" path="res://jugador/jugador.tscn" id="3_cdppe"]
+[ext_resource type="PackedScene" uid="uid://wba1l3c1ini2" path="res://enemigo/enemigo.tscn" id="4_he40h"]
+[ext_resource type="Script" uid="uid://c8m03rmcps1vn" path="res://jugador/camera_2d.gd" id="4_mnw11"]
+
+[node name="Game" type="Node2D" unique_id=333769787]
+script = ExtResource("1_04dmk")
+
+[node name="PauseMenu" parent="." unique_id=1793250673 instance=ExtResource("2_gkr7p")]
+
+[node name="jugador" parent="." unique_id=888636717 instance=ExtResource("3_cdppe")]
+position = Vector2(508, 627)
+
+[node name="Camera2D" type="Camera2D" parent="jugador" unique_id=879734517]
+script = ExtResource("4_mnw11")
+
+[node name="Enemigo" parent="." unique_id=1580437209 instance=ExtResource("4_he40h")]
+position = Vector2(114, 332)
