@@ -3,6 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const VELOCIDAD_BALA = 1000.0
+@onready var size: int = get_node("CollisionShape2D").shape.extents.x
+
 @onready var bala := preload("res://jugador/bala.tscn")
 
 func _physics_process(delta: float) -> void:
@@ -25,4 +27,8 @@ func _physics_process(delta: float) -> void:
 		velocity.y = directionV * SPEED
 	else:
 		velocity.y = move_toward(velocity.y, 0, SPEED)	
+	
+	#TODO: LIMITES PERSONAJE
+	##clamp(position.y, GameManager.window_height, 0)
+	
 	move_and_slide()

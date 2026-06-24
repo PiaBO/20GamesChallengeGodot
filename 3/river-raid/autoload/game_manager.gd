@@ -16,10 +16,19 @@ const SETTINGS_PATH := "user://settings.cfg"
 var is_paused := false
 var player_data := {}
 
+# --- VARIABLES DEL JUEGO  ---
+var window_length : int
+var window_height : int
+
+
+
 func _ready() -> void:
 	_load_settings()
 	
 	game_over_triggered.connect(_on_game_over)
+	window_height = get_viewport().get_visible_rect().size.y
+	window_length = get_viewport().get_visible_rect().size.x
+	
 
 func change_scene(path: String) -> void:
 	# Aseguramos despausar al cambiar de escena
