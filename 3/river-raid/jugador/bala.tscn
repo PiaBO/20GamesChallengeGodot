@@ -7,6 +7,8 @@
 radius = 22.090721
 
 [node name="bala" type="RigidBody2D" unique_id=792972476]
+collision_layer = 2
+collision_mask = 12
 gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 4

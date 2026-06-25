@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://b83lty3cnqth4"]
 
-[ext_resource type="Texture2D" uid="uid://lxas6ufh73br" path="res://niveles/img/fondo.jpg" id="1_d4ujm"]
+[ext_resource type="PackedScene" uid="uid://cvaai6olfrabv" path="res://niveles/nivel_base.tscn" id="1_d4ujm"]
+[ext_resource type="PackedScene" uid="uid://wba1l3c1ini2" path="res://enemigo/enemigo.tscn" id="2_w6qyd"]
 
-[node name="nivel1" type="Node2D" unique_id=437402803]
+[node name="NivelBase" unique_id=1526597633 instance=ExtResource("1_d4ujm")]
 
-[node name="fondo" type="Sprite2D" parent="." unique_id=1482676681]
-position = Vector2(518.00006, -1086)
-scale = Vector2(2.45889, 3.8193755)
-texture = ExtResource("1_d4ujm")
+[node name="Enemigo" parent="." index="2" unique_id=1580437209 instance=ExtResource("2_w6qyd")]
+position = Vector2(121, 153)
+
+[node name="Enemigo2" parent="." index="3" unique_id=1992842712 instance=ExtResource("2_w6qyd")]
+position = Vector2(860, 178)

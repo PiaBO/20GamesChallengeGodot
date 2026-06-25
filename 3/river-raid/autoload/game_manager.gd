@@ -21,7 +21,6 @@ var window_length : int
 var window_height : int
 
 
-
 func _ready() -> void:
 	_load_settings()
 	

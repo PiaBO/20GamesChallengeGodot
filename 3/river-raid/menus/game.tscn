@@ -2,20 +2,55 @@
 
 [ext_resource type="Script" uid="uid://cgmjn6oaffg5a" path="res://menus/game.gd" id="1_04dmk"]
 [ext_resource type="PackedScene" uid="uid://7b10x8cc4iea" path="res://menus/pause_menu.tscn" id="2_gkr7p"]
+[ext_resource type="PackedScene" uid="uid://b83lty3cnqth4" path="res://niveles/nivel_1.tscn" id="2_he40h"]
 [ext_resource type="PackedScene" uid="uid://58l173mrqoqc" path="res://jugador/jugador.tscn" id="3_cdppe"]
 [ext_resource type="PackedScene" uid="uid://wba1l3c1ini2" path="res://enemigo/enemigo.tscn" id="4_he40h"]
-[ext_resource type="Script" uid="uid://c8m03rmcps1vn" path="res://jugador/camera_2d.gd" id="4_mnw11"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_he40h"]
+size = Vector2(1090, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mnw11"]
+size = Vector2(16, 748)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3crkx"]
+size = Vector2(1080, 15.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17y0l"]
+size = Vector2(12, 739)
 
 [node name="Game" type="Node2D" unique_id=333769787]
 script = ExtResource("1_04dmk")
+niveles = Array[PackedScene]([ExtResource("2_he40h")])
+
+[node name="NivelActual" type="Node2D" parent="." unique_id=731285803]
+
+[node name="Mapa" type="Node2D" parent="NivelActual" unique_id=451157331]
+
+[node name="limites" type="StaticBody2D" parent="NivelActual" unique_id=270950332]
+scale = Vector2(0.99999994, 1)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NivelActual/limites" unique_id=325444698]
+position = Vector2(535, 0)
+shape = SubResource("RectangleShape2D_he40h")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="NivelActual/limites" unique_id=1630465670]
+position = Vector2(-2, 364)
+shape = SubResource("RectangleShape2D_mnw11")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="NivelActual/limites" unique_id=1465176738]
+position = Vector2(539, 727)
+shape = SubResource("RectangleShape2D_3crkx")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="NivelActual/limites" unique_id=1540907626]
+position = Vector2(1082, 362.5)
+shape = SubResource("RectangleShape2D_17y0l")
 
 [node name="PauseMenu" parent="." unique_id=1793250673 instance=ExtResource("2_gkr7p")]
+visible = false
 
 [node name="jugador" parent="." unique_id=888636717 instance=ExtResource("3_cdppe")]
 position = Vector2(508, 627)
-
-[node name="Camera2D" type="Camera2D" parent="jugador" unique_id=879734517]
-script = ExtResource("4_mnw11")
 
 [node name="Enemigo" parent="." unique_id=1580437209 instance=ExtResource("4_he40h")]
 position = Vector2(114, 332)
