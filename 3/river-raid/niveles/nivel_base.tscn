@@ -1,12 +1,13 @@
 [gd_scene format=3 uid="uid://cvaai6olfrabv"]
 
-[ext_resource type="Texture2D" uid="uid://lxas6ufh73br" path="res://niveles/img/fondo.jpg" id="1_1lcfh"]
 [ext_resource type="Script" uid="uid://bvxh2bltaqf5y" path="res://niveles/nivel_base.gd" id="1_gjx6g"]
+[ext_resource type="Texture2D" uid="uid://dysn4pqj3orfg" path="res://sprites/fondos/1.png" id="2_gjx6g"]
 
 [node name="NivelBase" type="Node2D" unique_id=1526597633]
 script = ExtResource("1_gjx6g")
+metadata/_edit_vertical_guides_ = [812.0]
 
-[node name="fondo" type="Sprite2D" parent="." unique_id=243893948]
-position = Vector2(518.00006, -1086)
-scale = Vector2(2.45889, 3.8193755)
-texture = ExtResource("1_1lcfh")
+[node name="1" type="Sprite2D" parent="." unique_id=31924101]
+position = Vector2(537, -487.8124)
+scale = Vector2(1.0689999, 0.8565417)
+texture = ExtResource("2_gjx6g")

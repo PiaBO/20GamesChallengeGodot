@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://ck70lqdy1i45j"]
+
+[node name="HUD" type="Node2D" unique_id=11923164]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=2088181719]
+offset_right = 40.0
+offset_bottom = 40.0

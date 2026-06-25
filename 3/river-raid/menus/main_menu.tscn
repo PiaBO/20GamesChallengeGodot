@@ -1,6 +1,23 @@
 [gd_scene format=3 uid="uid://c60gtktgkdpwg"]
 
 [ext_resource type="Script" uid="uid://bg70qtq6usphy" path="res://menus/main_menu.gd" id="1_8gy84"]
+[ext_resource type="Theme" uid="uid://4ekmw4f7t5hr" path="res://menus/tema_boton.tres" id="2_ij7vn"]
+[ext_resource type="Texture2D" uid="uid://lxas6ufh73br" path="res://niveles/img/fondo.jpg" id="2_yjgyn"]
+[ext_resource type="FontFile" uid="uid://dl1gacqoet3vb" path="res://menus/fonts/Mork Dungeon.ttf" id="4_rqbgu"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e8uyd"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1, 400, 1)
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.19999997
+
+[sub_resource type="Theme" id="Theme_e8uyd"]
+default_font = ExtResource("4_rqbgu")
 
 [node name="MainMenu" type="Control" unique_id=899175500]
 layout_mode = 3
@@ -9,24 +26,61 @@ script = ExtResource("1_8gy84")
 metadata/_edit_vertical_guides_ = [564.0]
 metadata/_edit_horizontal_guides_ = [325.0]
 
+[node name="Fondo" type="Sprite2D" parent="." unique_id=1855420235]
+position = Vector2(594.3538, 288.72443)
+rotation = 1.5645927
+scale = Vector2(1.61839, 1.3745278)
+texture = ExtResource("2_yjgyn")
+
+[node name="Control" type="Control" parent="." unique_id=763766632]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Control" unique_id=226547722]
+position = Vector2(-13, 396)
+amount = 555
+lifetime = 20.0
+preprocess = 20.0
+process_material = SubResource("ParticleProcessMaterial_e8uyd")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2010587669]
 layout_mode = 0
-offset_left = 501.0
-offset_top = 278.0
-offset_right = 634.0
-offset_bottom = 379.0
+offset_left = 246.0
+offset_top = 211.0
+offset_right = 878.0
+offset_bottom = 573.0
 
 [node name="BtnNuevaPartida" type="Button" parent="VBoxContainer" unique_id=1414152609]
 layout_mode = 2
+theme = ExtResource("2_ij7vn")
 text = "NUEVA PARTIDA"
 
 [node name="BtnContinuar" type="Button" parent="VBoxContainer" unique_id=68241121]
 layout_mode = 2
+theme = ExtResource("2_ij7vn")
 text = "CONTINUAR"
 
 [node name="BtnSalir" type="Button" parent="VBoxContainer" unique_id=1488053941]
 layout_mode = 2
+theme = ExtResource("2_ij7vn")
 text = "SALIR"
+
+[node name="Titulo" type="Label" parent="." unique_id=200004836]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 20.0
+offset_right = 1033.0
+offset_bottom = 263.0
+theme = SubResource("Theme_e8uyd")
+theme_override_font_sizes/font_size = 176
+text = "OmegaPaquetes"
 
 [connection signal="pressed" from="VBoxContainer/BtnNuevaPartida" to="." method="_on_btn_nueva_partida_pressed"]
 [connection signal="pressed" from="VBoxContainer/BtnContinuar" to="." method="_on_btn_continuar_pressed"]

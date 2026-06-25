@@ -5,8 +5,12 @@
 
 [node name="NivelBase" unique_id=1526597633 instance=ExtResource("1_d4ujm")]
 
-[node name="Enemigo" parent="." index="2" unique_id=1580437209 instance=ExtResource("2_w6qyd")]
+[node name="1" parent="." index="0" unique_id=31924101]
+position = Vector2(541, -683)
+scale = Vector2(1.1027501, 0.9424688)
+
+[node name="Enemigo" parent="." index="1" unique_id=1580437209 instance=ExtResource("2_w6qyd")]
 position = Vector2(121, 153)
 
-[node name="Enemigo2" parent="." index="3" unique_id=1992842712 instance=ExtResource("2_w6qyd")]
+[node name="Enemigo2" parent="." index="2" unique_id=1992842712 instance=ExtResource("2_w6qyd")]
 position = Vector2(860, 178)

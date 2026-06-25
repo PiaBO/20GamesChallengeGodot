@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://58l173mrqoqc"]
 
 [ext_resource type="Script" uid="uid://csaw0jpy8dhj2" path="res://jugador/jugador.gd" id="1_y3xgi"]
+[ext_resource type="SpriteFrames" uid="uid://bje5jhxjru6hd" path="res://jugador/sprites.tres" id="2_5vouv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vouv"]
 size = Vector2(28, 55)
@@ -9,9 +10,12 @@ size = Vector2(28, 55)
 collision_mask = 12
 script = ExtResource("1_y3xgi")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1441339386]
-offset_right = 28.0
-offset_bottom = 54.0
+[node name="ColorRect" type="AnimatedSprite2D" parent="." unique_id=1670800721]
+position = Vector2(15, 29)
+sprite_frames = ExtResource("2_5vouv")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.945679
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2126247970]
 position = Vector2(14, 28)

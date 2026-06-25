@@ -18,6 +18,21 @@ size = Vector2(1080, 15.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_17y0l"]
 size = Vector2(12, 739)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_he40h"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0.275, 0.275, 0.235)
+emission_shape = 3
+emission_box_extents = Vector3(1, 1080, 1)
+angle_min = -164.7
+angle_max = 176.90001
+spread = 0.0
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+hue_variation_min = -2.2351742e-08
+hue_variation_max = 0.19999997
+
 [node name="Game" type="Node2D" unique_id=333769787]
 script = ExtResource("1_04dmk")
 niveles = Array[PackedScene]([ExtResource("2_he40h")])
@@ -48,6 +63,28 @@ shape = SubResource("RectangleShape2D_17y0l")
 
 [node name="PauseMenu" parent="." unique_id=1793250673 instance=ExtResource("2_gkr7p")]
 visible = false
+
+[node name="Control" type="Control" parent="." unique_id=2140635269]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Control" unique_id=1665038716]
+position = Vector2(583, 799)
+rotation = -1.5726936
+amount = 555
+lifetime = 20.0
+preprocess = 20.0
+process_material = SubResource("ParticleProcessMaterial_he40h")
 
 [node name="jugador" parent="." unique_id=888636717 instance=ExtResource("3_cdppe")]
 position = Vector2(508, 627)

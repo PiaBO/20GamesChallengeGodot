@@ -41,12 +41,13 @@ func _on_btn_reanudar_pressed() -> void:
 func _on_vol_slider_value_changed(value: float) -> void:
 	GameManager.apply_volume("Master", value)
 
-func _on_btn_menu_principal_pressed() -> void:
-	_close_menu()
-	GameManager.change_scene(GameManager.MAIN_MENU_PATH)
-	
 func _on_game_paused(is_paused: bool) -> void:
 	visible = is_paused
 
 func _on_option_button_item_selected(index: int) -> void:
 	GameManager.apply_resolution(resolutions[index])
+
+
+func _on_btn_menu_prinipal_pressed() -> void:
+	_close_menu()
+	GameManager.change_scene(GameManager.MAIN_MENU_PATH)
