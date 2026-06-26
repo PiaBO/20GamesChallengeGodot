@@ -2,15 +2,33 @@
 
 [ext_resource type="PackedScene" uid="uid://cvaai6olfrabv" path="res://niveles/nivel_base.tscn" id="1_d4ujm"]
 [ext_resource type="PackedScene" uid="uid://wba1l3c1ini2" path="res://enemigo/enemigo.tscn" id="2_w6qyd"]
+[ext_resource type="PackedScene" uid="uid://7if7bjxe5rks" path="res://fuel tank/fuel_tank.tscn" id="3_2iqk4"]
+[ext_resource type="PackedScene" uid="uid://dxdt5xvyb7cbb" path="res://niveles/meta.tscn" id="4_eu3iu"]
 
 [node name="NivelBase" unique_id=1526597633 instance=ExtResource("1_d4ujm")]
+metadata/_edit_horizontal_guides_ = [-1252.0]
 
 [node name="1" parent="." index="0" unique_id=31924101]
-position = Vector2(541, -683)
-scale = Vector2(1.1027501, 0.9424688)
+position = Vector2(541, -728.64844)
+scale = Vector2(1.1027501, 0.9729011)
 
 [node name="Enemigo" parent="." index="1" unique_id=1580437209 instance=ExtResource("2_w6qyd")]
-position = Vector2(121, 153)
+position = Vector2(214, 155)
 
-[node name="Enemigo2" parent="." index="2" unique_id=1992842712 instance=ExtResource("2_w6qyd")]
-position = Vector2(860, 178)
+[node name="Enemigo2" parent="." index="2" unique_id=2128152507 instance=ExtResource("2_w6qyd")]
+position = Vector2(875, -248)
+
+[node name="Enemigo3" parent="." index="3" unique_id=2062365080 instance=ExtResource("2_w6qyd")]
+position = Vector2(202, -465)
+
+[node name="Enemigo4" parent="." index="4" unique_id=1800280322 instance=ExtResource("2_w6qyd")]
+position = Vector2(579, -1175)
+
+[node name="Enemigo5" parent="." index="5" unique_id=774983845 instance=ExtResource("2_w6qyd")]
+position = Vector2(196, -1515)
+
+[node name="FuelTank" parent="." index="6" unique_id=1381788402 instance=ExtResource("3_2iqk4")]
+position = Vector2(467, -280)
+
+[node name="Meta" parent="." index="7" unique_id=1332234394 instance=ExtResource("4_eu3iu")]
+position = Vector2(11, -1769)

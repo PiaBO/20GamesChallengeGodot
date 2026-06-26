@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://7b10x8cc4iea" path="res://menus/pause_menu.tscn" id="2_gkr7p"]
 [ext_resource type="PackedScene" uid="uid://b83lty3cnqth4" path="res://niveles/nivel_1.tscn" id="2_he40h"]
 [ext_resource type="PackedScene" uid="uid://58l173mrqoqc" path="res://jugador/jugador.tscn" id="3_cdppe"]
+[ext_resource type="PackedScene" uid="uid://w46xx8878bqj" path="res://niveles/nivel_2.tscn" id="3_mnw11"]
 [ext_resource type="PackedScene" uid="uid://wba1l3c1ini2" path="res://enemigo/enemigo.tscn" id="4_he40h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_he40h"]
@@ -35,7 +36,7 @@ hue_variation_max = 0.19999997
 
 [node name="Game" type="Node2D" unique_id=333769787]
 script = ExtResource("1_04dmk")
-niveles = Array[PackedScene]([ExtResource("2_he40h")])
+niveles = Array[PackedScene]([ExtResource("2_he40h"), ExtResource("3_mnw11")])
 
 [node name="NivelActual" type="Node2D" parent="." unique_id=731285803]
 
@@ -60,6 +61,14 @@ shape = SubResource("RectangleShape2D_3crkx")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="NivelActual/limites" unique_id=1540907626]
 position = Vector2(1082, 362.5)
 shape = SubResource("RectangleShape2D_17y0l")
+
+[node name="LabelPuntos" type="Label" parent="NivelActual" unique_id=2008301023]
+offset_left = 472.0
+offset_top = 637.0
+offset_right = 578.0
+offset_bottom = 723.0
+theme_override_font_sizes/font_size = 62
+text = "100"
 
 [node name="PauseMenu" parent="." unique_id=1793250673 instance=ExtResource("2_gkr7p")]
 visible = false

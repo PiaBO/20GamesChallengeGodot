@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dxdt5xvyb7cbb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qphry"]
+size = Vector2(1091, 190)
+
+[node name="Meta" type="StaticBody2D" unique_id=390834282 groups=["Meta"]]
+collision_layer = 32
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=283510018]
+position = Vector2(535.5, 85)
+shape = SubResource("RectangleShape2D_qphry")

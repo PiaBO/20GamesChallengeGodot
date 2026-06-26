@@ -3,10 +3,13 @@ extends Node
 # --- SEÑALES---
 signal game_paused(is_paused)
 signal game_over_triggered
+signal actualizar_fuel(fuel:int)
+signal siguienteNivel()
 
 # --- RUTAS DE ESCENAS ---
 const MAIN_MENU_PATH := "res://menus/main_menu.tscn"
 const GAME_PATH := "res://menus/game.tscn"
+const GAME_OVER_MENU := "res://menus/game_over_menu.tscn"
 
 # --- RUTAS DE ARCHIVOS ---
 const SAVE_PATH := "user://savegame.json"
@@ -15,10 +18,15 @@ const SETTINGS_PATH := "user://settings.cfg"
 # --- ESTADO DEL JUEGO ---
 var is_paused := false
 var player_data := {}
+var nivelActual : int
 
 # --- VARIABLES DEL JUEGO  ---
 var window_length : int
 var window_height : int
+
+# --- VARIABLES DEL JUGADRO
+var fuel : int
+var fuelMax := 10000
 
 
 func _ready() -> void:
@@ -28,7 +36,9 @@ func _ready() -> void:
 	window_height = get_viewport().get_visible_rect().size.y
 	window_length = get_viewport().get_visible_rect().size.x
 	
-
+	fuel = fuelMax
+	nivelActual = 1
+	
 func change_scene(path: String) -> void:
 	# Aseguramos despausar al cambiar de escena
 	if is_paused:
@@ -107,6 +117,19 @@ func _load_settings() -> void:
 # LÓGICA DE FIN DE JUEGO
 # ==========================================
 func _on_game_over() -> void:
-	# Puedes instanciar un CanvasLayer con el GameOverMenu aquí, 
-	# o cambiar a una escena dedicada.
-	pass 
+	change_scene(GAME_OVER_MENU)
+	
+func perder_fuel():
+	if fuel > 0:
+		fuel -= 1
+	else:
+		_on_game_over()
+	actualizar_fuel.emit(fuel)
+
+func recargar_fuel():
+	if fuel < fuelMax:
+		fuel = fuelMax
+
+func nivel_superado():
+	siguienteNivel.emit()
+		

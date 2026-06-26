@@ -4,10 +4,10 @@
 [ext_resource type="SpriteFrames" uid="uid://bje5jhxjru6hd" path="res://jugador/sprites.tres" id="2_5vouv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vouv"]
-size = Vector2(28, 55)
+size = Vector2(32, 52.5)
 
 [node name="jugador" type="CharacterBody2D" unique_id=888636717]
-collision_mask = 12
+collision_mask = 60
 script = ExtResource("1_y3xgi")
 
 [node name="ColorRect" type="AnimatedSprite2D" parent="." unique_id=1670800721]
@@ -17,8 +17,8 @@ animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.945679
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2126247970]
-position = Vector2(14, 28)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2126247970 groups=["Jugador"]]
+position = Vector2(16, 26.75)
 shape = SubResource("RectangleShape2D_5vouv")
 
 [node name="PuntoDisparo" type="Marker2D" parent="." unique_id=1885224695 groups=["Balas"]]
