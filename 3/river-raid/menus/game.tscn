@@ -88,8 +88,8 @@ grow_vertical = 0
 mouse_filter = 2
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="Control" unique_id=1665038716]
-position = Vector2(583, 799)
-rotation = -1.5726936
+position = Vector2(529, 1.000061)
+rotation = -4.708147
 amount = 555
 lifetime = 20.0
 preprocess = 20.0
