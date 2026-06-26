@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://wba1l3c1ini2"]
 
+[ext_resource type="Script" uid="uid://bq06b7fvu7yvw" path="res://enemigo/enemigo.gd" id="1_3u5g0"]
 [ext_resource type="Texture2D" uid="uid://dk46kxmwghxys" path="res://enemigo/sprites/enemy_2_g_l1.png" id="1_wakaj"]
 [ext_resource type="Texture2D" uid="uid://bmjucoh7t8cah" path="res://enemigo/sprites/enemy_2_g_l2.png" id="2_3u5g0"]
 [ext_resource type="Texture2D" uid="uid://c4scdnq0s8rlh" path="res://enemigo/sprites/enemy_2_g_m.png" id="3_4u45y"]
@@ -39,19 +40,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rdc5o"]
-size = Vector2(34, 33)
+size = Vector2(91, 85.5)
 
 [node name="Enemigo" type="StaticBody2D" unique_id=1580437209 groups=["Enemigos"]]
 collision_layer = 4
 collision_mask = 3
+script = ExtResource("1_3u5g0")
 
 [node name="ColorRect" type="AnimatedSprite2D" parent="." unique_id=327515767]
-position = Vector2(16.000002, 17)
-scale = Vector2(0.6315624, 0.653125)
+texture_filter = 1
+position = Vector2(44.894997, 45.550003)
+scale = Vector2(1.5345311, 1.5453125)
 sprite_frames = SubResource("SpriteFrames_e8uyd")
 autoplay = "default"
 frame_progress = 0.6269842
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2118394232]
-position = Vector2(17, 17)
+position = Vector2(45.5, 43.25)
 shape = SubResource("RectangleShape2D_rdc5o")

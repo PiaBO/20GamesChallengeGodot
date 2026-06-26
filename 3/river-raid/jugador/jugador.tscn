@@ -4,21 +4,22 @@
 [ext_resource type="SpriteFrames" uid="uid://bje5jhxjru6hd" path="res://jugador/sprites.tres" id="2_5vouv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vouv"]
-size = Vector2(32, 52.5)
+size = Vector2(70, 79.5)
 
 [node name="jugador" type="CharacterBody2D" unique_id=888636717]
 collision_mask = 60
 script = ExtResource("1_y3xgi")
 
 [node name="ColorRect" type="AnimatedSprite2D" parent="." unique_id=1670800721]
-position = Vector2(15, 29)
+position = Vector2(32.5, 42)
+scale = Vector2(1.546875, 1.40625)
 sprite_frames = ExtResource("2_5vouv")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.945679
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2126247970 groups=["Jugador"]]
-position = Vector2(16, 26.75)
+position = Vector2(35, 40.25)
 shape = SubResource("RectangleShape2D_5vouv")
 
 [node name="PuntoDisparo" type="Marker2D" parent="." unique_id=1885224695 groups=["Balas"]]
